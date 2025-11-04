@@ -1,0 +1,71 @@
+<div class="panel-container" [class.light-mode]="modoClaro">
+    <header class="panel-header">
+      <h1>Panel de Administración</h1>
+      <button class="theme-toggle" (click)="alternarModo()">
+        {{ modoClaro ? '🌙 Modo oscuro' : '☀️ Modo claro' }}
+      </button>
+    </header>
+  
+    <!-- === SECCIÓN DE PEDIDOS === -->
+    <div class="section">
+      <h2>Pedidos</h2>
+      <table class="data-table" *ngIf="pedidos.length > 0; else noPedidos">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Correo</th>
+            <th>Dirección</th>
+            <th>Total</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidos">
+            <td>{{ pedido.id }}</td>
+            <td>{{ pedido.nombre }}</td>
+            <td>{{ pedido.correo }}</td>
+            <td>{{ pedido.direccion }}</td>
+            <td>{{ pedido.total | currency:'COP' }}</td>
+            <td>{{ pedido.estado }}</td>
+            <td>
+              <button (click)="actualizarEstadoPedido(pedido, 'enviado')">Marcar Enviado</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noPedidos><p class="no-data">No hay pedidos registrados.</p></ng-template>
+    </div>
+  
+    <!-- === SECCIÓN DE MENSAJES === -->
+    <div class="section">
+      <h2>Mensajes de Contacto</h2>
+      <table class="data-table" *ngIf="mensajes.length > 0; else noMensajes">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Mensaje</th>
+            <th>Estado</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of mensajes">
+            <td>{{ m.id }}</td>
+            <td>{{ m.nombre }}</td>
+            <td>{{ m.correo }}</td>
+            <td>{{ m.mensaje }}</td>
+            <td>{{ m.estado }}</td>
+            <td>
+              <button (click)="marcarRespondido(m)">Responder</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ng-template #noMensajes><p class="no-data">No hay mensajes de contacto.</p></ng-template>
+    </div>
+  </div>
+  

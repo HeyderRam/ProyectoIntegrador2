@@ -1,0 +1,11 @@
+<div class="login-container">
+    <h2>Acceso Administrador</h2>
+    <form (ngSubmit)="iniciarSesion()">
+      <input type="text" placeholder="Usuario" [(ngModel)]="usuario" name="usuario" required />
+      <input type="password" placeholder="Contraseña" [(ngModel)]="contrasena" name="contrasena" required />
+      <button type="submit">Ingresar</button>
+    </form>
+  
+    <p *ngIf="mensaje" class="mensaje">{{ mensaje }}</p>
+  </div>
+  

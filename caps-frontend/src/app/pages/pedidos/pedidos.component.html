@@ -1,0 +1,19 @@
+<h2 class="titulo">📦 Historial de Pedidos</h2>
+
+<div *ngIf="pedidos.length === 0" class="vacio">
+  <p>No tienes pedidos realizados aún.</p>
+  <a routerLink="/catalogo">🛍️ Ir al catálogo</a>
+</div>
+
+<div *ngIf="pedidos.length > 0" class="lista-pedidos">
+  <div *ngFor="let pedido of pedidos" class="pedido">
+    <h3>🧾 Pedido del {{ pedido.fecha | date:'short' }}</h3>
+    <p><strong>Total:</strong> {{ pedido.total | currency:'COP':'symbol' }}</p>
+    <ul>
+      <li *ngFor="let p of pedido.productos">
+        {{ p.nombre }} (x{{ p.cantidad ?? 1 }}) — 
+        {{ p.precio | currency:'COP':'symbol':'1.0-0' }}
+      </li>
+    </ul>
+  </div>
+</div>

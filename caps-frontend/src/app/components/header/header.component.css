@@ -1,0 +1,84 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #007b55, #004d38);
+    color: white;
+    padding: 14px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .nav a:hover {
+    color: #d4f1e1;
+    transform: scale(1.05);
+  }
+  
+  .activo {
+    border-bottom: 2px solid #fff;
+  }
+  
+  .carrito-link {
+    position: relative;
+    font-weight: bold;
+  }
+  
+  .contador {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background: #ff3b3b;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  }
+  
+  .navbar {
+    background-color: #111;
+    padding: 10px 20px;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .navbar a:hover {
+    color: #ffcc00;
+  }
+  
+  .navbar a.active {
+    color: #00c3ff;
+    font-weight: bold;
+  }
+  

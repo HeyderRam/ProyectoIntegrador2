@@ -1,0 +1,51 @@
+<div class="admin-container">
+    <h2>📦 Panel de Pedidos</h2>
+  
+    <!-- Si no hay pedidos -->
+    <div *ngIf="pedidos.length === 0" class="no-pedidos">
+      <p>No hay pedidos registrados aún.</p>
+    </div>
+  
+    <!-- Lista de pedidos -->
+    <div class="pedidos-container" *ngIf="pedidos.length > 0">
+      <div *ngFor="let pedido of pedidos" class="pedido-card">
+        <div class="pedido-header">
+          <h3>{{ pedido.nombre }}</h3>
+          <span [ngClass]="pedido.estado === 'enviado' ? 'estado-enviado' : 'estado-pendiente'">
+            {{ pedido.estado | uppercase }}
+          </span>
+        </div>
+  
+        <div class="pedido-info">
+          <p><strong>Correo:</strong> {{ pedido.correo }}</p>
+          <p><strong>Dirección:</strong> {{ pedido.direccion }}</p>
+          <p class="total"><strong>Total:</strong> {{ pedido.total | currency:'COP':'symbol':'1.0-0' }}</p>
+        </div>
+  
+        <div class="productos-lista">
+          <p><strong>Productos:</strong></p>
+          <ul>
+            <li *ngFor="let producto of parseProductos(pedido.productos)">
+              🧢 {{ producto.nombre }} - Cantidad: {{ producto.cantidad }} - ${{ producto.precio }}
+            </li>
+          </ul>
+        </div>
+  
+        <div class="acciones">
+          <button 
+            *ngIf="pedido.estado === 'pendiente'" 
+            (click)="actualizarEstado(pedido.id, 'enviado')">
+            Marcar como Enviado 🚚
+          </button>
+  
+          <button 
+            *ngIf="pedido.estado === 'enviado'" 
+            class="enviado"
+            disabled>
+            ✅ Enviado
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

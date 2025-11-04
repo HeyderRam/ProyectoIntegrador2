@@ -1,0 +1,115 @@
+
+:host {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f6fa;
+    min-height: 100vh;
+    padding: 30px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #2f3640;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .pedidos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 20px;
+  }
+  
+  .pedido-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .pedido-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+  }
+  
+  .pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .pedido-header h3 {
+    font-size: 1.2rem;
+    color: #273c75;
+    margin: 0;
+  }
+  
+  .pedido-header span {
+    background-color: #e1e8ef;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #353b48;
+  }
+  
+  .pedido-info p {
+    margin: 4px 0;
+    color: #555;
+    font-size: 0.95rem;
+  }
+  
+  .productos-lista {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  
+  .productos-lista li {
+    list-style: none;
+    padding: 5px 0;
+    color: #444;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0.9rem;
+  }
+  
+  .total {
+    font-weight: bold;
+    color: #192a56;
+    margin-top: 8px;
+  }
+  
+  button {
+    background-color: #0097e6;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 12px;
+  }
+  
+  button:hover {
+    background-color: #0077b6;
+  }
+  
+  button.enviado {
+    background-color: #4cd137;
+  }
+  
+  button.enviado:hover {
+    background-color: #44bd32;
+  }
+  
+  @media (max-width: 600px) {
+    .pedidos-container {
+      grid-template-columns: 1fr;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

@@ -1,0 +1,156 @@
+/* === BASE GENERAL === */
+:host {
+    display: block;
+    min-height: 100vh;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  .panel-container {
+    color: #f0f0f0;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  
+  /* === CABECERA === */
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .panel-header h1 {
+    color: #ffb400;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .theme-toggle {
+    background-color: #ffb400;
+    color: #1f1f1f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #ffc933;
+    transform: scale(1.05);
+  }
+  
+  /* === SECCIONES === */
+  .section {
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.4s ease;
+  }
+  
+  h2 {
+    border-bottom: 2px solid #ffb400;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    color: #ffb400;
+  }
+  
+  /* === TABLAS === */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #2b2b2b;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .data-table th,
+  .data-table td {
+    padding: 1rem;
+    text-align: left;
+  }
+  
+  .data-table th {
+    background: #ffb400;
+    color: #1f1f1f;
+  }
+  
+  .data-table tr:nth-child(even) {
+    background: #242424;
+  }
+  
+  .data-table tr:hover {
+    background: #333;
+    transition: background 0.3s ease;
+  }
+  
+  /* === BOTONES === */
+  button {
+    background-color: #ffb400;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #1f1f1f;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #ffc933;
+    transform: scale(1.05);
+  }
+  
+  /* === MENSAJES VACÍOS === */
+  .no-data {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 1rem;
+  }
+  
+  /* === SCROLL PERSONALIZADO === */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #ffb400;
+    border-radius: 10px;
+  }
+  
+  /* === MODO CLARO === */
+  .light-mode {
+    background-color: #fafafa;
+    color: #222;
+  }
+  
+  .light-mode .section {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .light-mode .data-table {
+    background: #fff;
+  }
+  
+  .light-mode .data-table th {
+    background: #ffb400;
+    color: #222;
+  }
+  
+  .light-mode .data-table tr:nth-child(even) {
+    background: #f3f3f3;
+  }
+  
+  .light-mode .data-table tr:hover {
+    background: #eaeaea;
+  }
+  

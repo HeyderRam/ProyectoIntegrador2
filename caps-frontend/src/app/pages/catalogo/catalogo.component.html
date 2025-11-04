@@ -1,0 +1,21 @@
+<h2 class="titulo">🧢 Catálogo de Gorras</h2>
+
+<div *ngIf="productos.length === 0" class="loading">
+  <p>Cargando productos...</p>
+</div>
+
+<div *ngIf="productos.length > 0" class="catalogo-grid">
+  <div *ngFor="let p of productos" class="producto">
+    <img [src]="'http://127.0.0.1:5000/static/' + p.imagen" [alt]="p.nombre" />
+    <h3>{{ p.nombre }}</h3>
+    <p class="precio">💰 Precio: {{ p.precio | currency:'COP':'symbol':'1.0-0' }}</p>
+    <p class="categoria">🏷️ Categoría: {{ p.categoria }}</p>
+    <button class="btn-agregar" (click)="agregarAlCarrito(p)">🛒 Agregar al carrito</button>
+  </div>
+</div>
+
+<div class="ver-carrito">
+  <button routerLink="/carrito" class="btn-ver-carrito">
+    🛍️ Ver Carrito ({{ carritoCount }})
+  </button>
+</div>

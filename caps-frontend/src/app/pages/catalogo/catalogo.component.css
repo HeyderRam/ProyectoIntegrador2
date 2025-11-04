@@ -1,0 +1,116 @@
+/* --- Estilos generales --- */
+.titulo {
+    text-align: center;
+    font-size: 2rem;
+    margin: 30px 0 10px;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 20px;
+    justify-items: center;
+  }
+  
+  .producto {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    max-width: 260px;
+  }
+  
+  .producto:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+  
+  .producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .producto h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .precio {
+    color: #007b55;
+    font-weight: 700;
+    font-size: 1rem;
+    margin: 6px 0 12px;
+  }
+  
+  .btn-agregar {
+    background-color: #007b55;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background-color 0.25s, transform 0.2s;
+  }
+  
+  .btn-agregar:hover {
+    background-color: #005f40;
+    transform: scale(1.05);
+  }
+  
+  .loading {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    margin-top: 20px;
+  }
+  
+  .ver-carrito {
+    text-align: center;
+    margin-top: 35px;
+  }
+  
+  .btn-ver-carrito {
+    background-color: #222;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .btn-ver-carrito:hover {
+    background-color: #444;
+    transform: scale(1.03);
+  }
+  
+  @media (max-width: 600px) {
+    .titulo {
+      font-size: 1.6rem;
+    }
+  
+    .producto img {
+      height: 160px;
+    }
+  
+    .btn-agregar,
+    .btn-ver-carrito {
+      font-size: 0.9rem;
+    }
+  }
+  

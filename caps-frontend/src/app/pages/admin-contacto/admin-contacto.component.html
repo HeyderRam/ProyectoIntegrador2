@@ -1,0 +1,42 @@
+<div class="contenedor-contacto">
+    <h2>Mensajes de Contacto</h2>
+  
+    <table class="tabla-mensajes" *ngIf="mensajes.length > 0; else vacio">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Mensaje</th>
+          <th>Estado</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of mensajes">
+          <td>{{ m.id }}</td>
+          <td>{{ m.nombre }}</td>
+          <td>{{ m.correo }}</td>
+          <td>{{ m.mensaje }}</td>
+          <td>
+            <span class="estado" [ngClass]="m.estado">{{ m.estado }}</span>
+          </td>
+          <td>
+            <button
+              class="btn btn-accion"
+              (click)="marcarRespondido(m)"
+              [disabled]="m.estado === 'respondido'"
+              [ngClass]="{ 'btn-disabled': m.estado === 'respondido' }"
+            >
+              Marcar como Respondido
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #vacio>
+      <p class="mensaje-vacio">No hay mensajes por el momento.</p>
+    </ng-template>
+  </div>
+  

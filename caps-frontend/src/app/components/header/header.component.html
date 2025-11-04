@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="logo">
+    🧢 <span>Caps Pereira</span>
+  </div>
+
+  <nav class="nav">
+    <a routerLink="/catalogo" routerLinkActive="activo">🛍️ Catálogo</a>
+    <a routerLink="/carrito" routerLinkActive="activo" class="carrito-link">
+      🛒 Carrito
+      <span class="contador" *ngIf="carritoCount > 0">{{ carritoCount }}</span>
+    </a>
+    <a routerLink="/contacto" routerLinkActive="active">Contacto 💬</a>
+    <a routerLink="/login" routerLinkActive="active">Admin 🔑</a>
+  </nav>
+</header>

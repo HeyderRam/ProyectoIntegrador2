@@ -1,0 +1,25 @@
+<section class="contacto">
+    <h2>📩 Contáctanos</h2>
+  
+    <form (ngSubmit)="enviar()" #contactoForm="ngForm">
+      <div>
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="nombre" name="nombre" required />
+      </div>
+  
+      <div>
+        <label>Correo:</label>
+        <input type="email" [(ngModel)]="correo" name="correo" required />
+      </div>
+  
+      <div>
+        <label>Mensaje:</label>
+        <textarea [(ngModel)]="mensaje" name="mensaje" required></textarea>
+      </div>
+  
+      <button type="submit" [disabled]="!contactoForm.valid">Enviar</button>
+    </form>
+  
+    <p *ngIf="respuesta" class="mensaje">{{ respuesta }}</p>
+  </section>
+  

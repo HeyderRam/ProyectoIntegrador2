@@ -1,0 +1,60 @@
+<h2 class="titulo">🛒 Tu Carrito</h2>
+
+<div *ngIf="productosCarrito.length === 0" class="vacio">
+  <p>No hay productos en el carrito.</p>
+  <a routerLink="/catalogo">⬅️ Volver al catálogo</a>
+</div>
+
+<div *ngIf="productosCarrito.length > 0" class="carrito-lista">
+  <div *ngFor="let p of productosCarrito; let i = index" class="carrito-item">
+    <img [src]="'http://127.0.0.1:5000/static/' + p.imagen" [alt]="p.nombre" />
+
+    <div class="info">
+      <h3>{{ p.nombre }}</h3>
+      <p>Precio unitario: {{ p.precio | currency:'COP':'symbol':'1.0-0' }}</p>
+
+      <div class="cantidad">
+        <label for="cant-{{ i }}">Cantidad:</label>
+        <input
+          id="cant-{{ i }}"
+          type="number"
+          min="1"
+          [value]="p.cantidad ?? 1"
+        />
+      </div>
+
+      <p>
+        Subtotal:
+        <strong>
+          {{ (p.precio * (p.cantidad ?? 1)) | currency:'COP':'symbol':'1.0-0' }}
+        </strong>
+      </p>
+    </div>
+
+    <button class="btn-eliminar" (click)="eliminarProducto(i)">❌ Eliminar</button>
+  </div>
+
+  <div class="formulario-pedido">
+    <h3>📦 Datos del Pedido</h3>
+
+    <div class="campo">
+      <label>Nombre:</label>
+      <input type="text" [(ngModel)]="nombre" placeholder="Tu nombre completo" />
+    </div>
+
+    <div class="campo">
+      <label>Correo:</label>
+      <input type="email" [(ngModel)]="correo" placeholder="tuemail@ejemplo.com" />
+    </div>
+
+    <div class="campo">
+      <label>Dirección:</label>
+      <input type="text" [(ngModel)]="direccion" placeholder="Tu dirección de entrega" />
+    </div>
+  </div>
+
+  <div class="total">
+    <h3>Total: {{ total | currency:'COP':'symbol':'1.0-0' }}</h3>
+    <button class="btn-finalizar" (click)="finalizarPedido()">✅ Finalizar pedido</button>
+  </div>
+</div>
